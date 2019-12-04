@@ -2,7 +2,12 @@
 Module: critters
 
 A Python implementation of Critters!
+
+Authors:
+1) Name - USD Email Address
+2) Name - USD Email Address
 """
+
 import random
 from tkinter import *
 from tkinter.font import Font
@@ -55,44 +60,61 @@ class Critter:
         self.world_height = height
 
 
+
 """
 To Do: Complete the Bear, Cheetah, Lion, and Torero classes below.
 
-Note that "pass" is a "do nothing" statement and is there just for a
-placeholder.
-You should remove it when you implement your method.
+Note: remove the "pass" statement after you start implementing the constructor.
 """
 
 class Bear(Critter):
-    """ Add a class comment here. """
+    """ Replace this with a docstring for your class. """
 
     def __init__(self, location, is_grizzly):
         pass
 
 
 class Cheetah(Critter):
-    """ Add a class comment here. """
+    """ Replace this with a docstring for your class. """
 
     def __init__(self, location, hunger):
         pass
 
 
 class Lion(Critter):
-    """ Add a class comment here. """
+    """ Replace this with a docstring for your class. """
 
     def __init__(self, location):
         pass
 
 
 class Torero(Critter):
-    """ Add a class comment here. """
+    """ Replace this with a docstring for your class. """
 
     def __init__(self, location):
         pass
 
 
 
+
+
+
+
+
+
+
+
+
 """ DO NOT MODIFY ANYTHING PAST THIS POINT!!!! """
+
+
+
+
+
+
+
+
+
 
 class Direction(Enum):
     """ Enumeration for directions in the world. """
