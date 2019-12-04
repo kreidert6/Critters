@@ -2,6 +2,10 @@
 Module: psa9_tester
 
 Test cases for critters project.
+
+DO NOT MODIFY THIS FILE IN ANY WAY!
+
+Author: Sat Garcia (sat@sandiego.edu)
 """
 
 from unittest.mock import Mock, MagicMock, mock_open, patch, call
