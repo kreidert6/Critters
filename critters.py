@@ -4,8 +4,7 @@ Module: critters
 A Python implementation of Critters!
 
 Authors:
-1) Name - USD Email Address
-2) Name - USD Email Address
+Brendan Hamilton, Tyler Kreider, Julian Camacho
 """
 
 import random
@@ -71,28 +70,97 @@ class Bear(Critter):
     """ Replace this with a docstring for your class. """
 
     def __init__(self, location, is_grizzly):
-        pass
+        super().__init__(location)
+        self.dirs = [Direction.NORTH, Direction.WEST]
+        self.move_number = 0
+
+    def __str__(self):
+        return "B"
+    def get_move(self, neighbors):
+        i = self.move_number % 4
+        self.move_number = self.move_number + 1
+        return self.dirs[i]
+    def fight(self, opponent):
+        return Attack.SCRATCH
+    def get_color(self):
+        if is_grizzly == True:
+            return "brown"
+        else:
+            return "snow"
+    def eat(self):
+        return True
+
 
 
 class Cheetah(Critter):
     """ Replace this with a docstring for your class. """
 
     def __init__(self, location, hunger):
-        pass
+        super().__init__(location)
+        self.dirs = [Direction.NORTH, Direction.WEST]
+        self.move_number = 0
+    def __str__(self):
+        return "L"
+    def get_move(self, neighbors):
+        i = self.move_number % 4
+        self.move_number = self.move_number + 1
+        return self.dirs[i]
+    def fight(self, opponent):
+        
+        return Attack.SCRATCH
+    def get_color(self):
+        return "red"
+    def eat(self):
+        
+        return True
 
 
 class Lion(Critter):
     """ Replace this with a docstring for your class. """
 
     def __init__(self, location):
-        pass
+        super().__init__(location)
+            self.dirs = [Direction.NORTH, Direction.WEST]
+            self.move_number = 0
+    def __str__(self):
+        return "B"
+    def get_move(self, neighbors):
+        i = self.move_number % 4
+        self.move_number = self.move_number + 1
+        return self.dirs[i]
+    def fight(self, opponent):
+        return Attack.SCRATCH
+    def get_color(self):
+        if is_grizzly == True:
+            return "brown"
+        else:
+            return "snow"
+    def eat(self):
+        return True
 
 
 class Torero(Critter):
     """ Replace this with a docstring for your class. """
 
     def __init__(self, location):
-        pass
+        super().__init__(location)
+            self.dirs = [Direction.NORTH, Direction.WEST]
+            self.move_number = 0
+    def __str__(self):
+        return "B"
+    def get_move(self, neighbors):
+        i = self.move_number % 4
+        self.move_number = self.move_number + 1
+        return self.dirs[i]
+    def fight(self, opponent):
+        return Attack.SCRATCH
+    def get_color(self):
+        if is_grizzly == True:
+            return "brown"
+        else:
+            return "snow"
+    def eat(self):
+        return True
 
 
 
