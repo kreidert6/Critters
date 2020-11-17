@@ -93,50 +93,79 @@ class Bear(Critter):
 
 
 class Cheetah(Critter):
-    """ Replace this with a docstring for your class. """
+    """ Creates and defines methods and attributes for lion critter """
 
     def __init__(self, location, hunger):
         super().__init__(location)
-        self.dirs = [Direction.NORTH, Direction.WEST]
+        self.hunger_level = hunger
+        self.current_hunger = 0
+        self.dirs = [Direction.SOUTH, Direction.WEST, Direction.North]
         self.move_number = 0
+        self.current_move = None
     def __str__(self):
-        return "L"
+        return "O"
     def get_move(self, neighbors):
-        i = self.move_number % 4
-        self.move_number = self.move_number + 1
-        return self.dirs[i]
-    def fight(self, opponent):
+        if self.move_number % 3 == 0:
+            i = random.choice(self.dirs)
+            self.move_number += 1
+            self.current_move += i 
+            return i 
+        else:
+            self.move_number += 1
+            return self.current_move
         
-        return Attack.SCRATCH
+    def fight(self, opponent):
+        if self.current_hunger <= self.hunger_level:
+            return Attack.SCRATCH
+        else:
+            return Attack.POUNCE
     def get_color(self):
         return "red"
     def eat(self):
-        
-        return True
+        if self.current_hunger <= self.hunger_level:
+            self.current_hunger += 1
+            return True
+        else:
+            self.current_hunger += 1
+            return False
 
 
 class Lion(Critter):
-    """ Replace this with a docstring for your class. """
+    """ Creates and defines methods and attributes for lion critter """
 
     def __init__(self, location):
         super().__init__(location)
-            self.dirs = [Direction.NORTH, Direction.WEST]
+            self.dirs = [Direction.SOUTH, Direction.WEST, Direction.NORTH]
             self.move_number = 0
+            self.num_fights = 0
+            self.dirs_spot = -1
+        
     def __str__(self):
-        return "B"
+        return "L"
     def get_move(self, neighbors):
-        i = self.move_number % 4
-        self.move_number = self.move_number + 1
-        return self.dirs[i]
+        if self.move_number % 5 == 0:
+            self.dirs_spot += 1
+            if self.dirs_spot == 4:
+                self.dirs_spot = 0 
+            move = self.dirs[self.dirs_spot]
+            self.move_number += 1
+            return move
+        
     def fight(self, opponent):
-        return Attack.SCRATCH
-    def get_color(self):
-        if is_grizzly == True:
-            return "brown"
+        self.num_fights += 1
+        if opponent == "B":
+            return Attack.ROAR
         else:
-            return "snow"
+            return Attack.POUNCE
+
+    def get_color(self):
+        return "goldenrod3"
+
     def eat(self):
-        return True
+        if self.num_fights >= 1:
+            return True
+        else:
+            return False
 
 
 class Torero(Critter):
