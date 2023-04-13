@@ -18,7 +18,6 @@ class Critter:
     Representation of a critter in our world. This class will act as the
     parent/super class for all of the specific critter types we define.
 
-    DO NOT MODIFY THIS CLASS IN ANY WAY!
     """
 
     def __init__(self, location):
@@ -63,7 +62,7 @@ class Critter:
 """
 To Do: Complete the Bear, Cheetah, Lion, and Torero classes below.
 
-Note: remove the "pass" statement after you start implementing the constructor.
+
 """
 
 class Bear(Critter):
@@ -135,10 +134,10 @@ class Lion(Critter):
 
     def __init__(self, location):
         super().__init__(location)
-            self.dirs = [Direction.SOUTH, Direction.WEST, Direction.NORTH]
-            self.move_number = 0
-            self.num_fights = 0
-            self.dirs_spot = -1
+        self.dirs = [Direction.SOUTH, Direction.WEST, Direction.NORTH]
+        self.move_number = 0
+        self.num_fights = 0
+        self.dirs_spot = -1
         
     def __str__(self):
         return "L"
@@ -169,12 +168,12 @@ class Lion(Critter):
 
 
 class Torero(Critter):
-    """ Replace this with a docstring for your class. """
+  
 
     def __init__(self, location):
         super().__init__(location)
-            self.dirs = [Direction.NORTH, Direction.WEST]
-            self.move_number = 0
+        self.dirs = [Direction.NORTH, Direction.WEST]
+        self.move_number = 0
     def __str__(self):
         return "B"
     def get_move(self, neighbors):
@@ -190,23 +189,6 @@ class Torero(Critter):
             return "snow"
     def eat(self):
         return True
-
-
-
-
-
-
-
-
-
-
-
-
-""" DO NOT MODIFY ANYTHING PAST THIS POINT!!!! """
-
-
-
-
 
 
 
